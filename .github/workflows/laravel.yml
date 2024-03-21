@@ -24,6 +24,8 @@ jobs:
 
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: npm install
+      run: npm run build
 
     - name: Generate key
       run: php artisan key:generate
@@ -36,7 +38,7 @@ jobs:
         mkdir -p database
         touch database/database.sqlite
 
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
+    - name: Execute tests (Unit and Feature tests) via Pest
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
@@ -58,5 +60,6 @@ jobs:
           php artisan config:clear
           php artisan route:clear
           php artisan view:clear
-          npm run prod
+          npm install
+          npm run build
           # any other deployment steps
