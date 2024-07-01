@@ -28,7 +28,7 @@ function handleImageError() {
 
 <template>
     <Head title="Welcome" />
-    hello nataly but with a CI/CD pipeline
+    hello nataly but with a CI/CD pipeline, and now a domain, and soon SSL
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
         <img
             id="background"
